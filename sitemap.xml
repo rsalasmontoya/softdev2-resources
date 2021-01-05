@@ -18,11 +18,6 @@
   </url>
   
   <url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/student/</loc>
-    <lastmod>2020-12-20T15:26:15+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/git/</loc>
   </url>
   
@@ -50,6 +45,11 @@
   
   <url>
     <loc>https://ggc-sd.github.io/softdev2-resources/instructor/</loc>
+    <lastmod>2020-12-20T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ggc-sd.github.io/softdev2-resources/student/</loc>
     <lastmod>2020-12-20T15:26:15+00:00</lastmod>
   </url>
   
