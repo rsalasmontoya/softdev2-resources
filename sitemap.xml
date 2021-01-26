@@ -22,10 +22,6 @@
   </url>
   
   <url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/</loc>
-  </url>
-  
-  <url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/git/beginner/</loc>
   </url>
   
@@ -238,6 +234,10 @@
   <url>
     <loc>https://ggc-sd.github.io/softdev2-resources/</loc>
     <lastmod>2019-10-26T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/</loc>
   </url>
   
   <url>
