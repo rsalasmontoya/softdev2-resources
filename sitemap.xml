@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/docker/</loc>
+  </url>
+  
+  <url>
     <loc>https://ggc-sd.github.io/softdev2-resources/instructor/exams/midterm/</loc>
     <lastmod>2020-12-20T15:26:15+00:00</lastmod>
   </url>

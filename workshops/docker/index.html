@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>Docker Workshop</title>
+<meta name="description" content="This workshop will cover the basics of Docker">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/softdev2-resources/reveal-js/css/reset.css">
+<link rel="stylesheet" href="/softdev2-resources/reveal-js/css/reveal.css"><link rel="stylesheet" href="/softdev2-resources/reveal-hugo/themes/robot-lung.css" id="theme"><link rel="stylesheet" href="/softdev2-resources/highlight-js/default.min.css">
+    <style>
+  .reveal strong {
+    color: blue;
+  }
+  .home-link {
+    position: absolute;
+    left: 10px;
+    bottom: 5px;          
+  }
+  .reveal section.side-by-side figure {
+    position: absolute;
+  }
+  .reveal section.side-by-side figure:first-of-type {
+    left: 5%;
+  }
+  .reveal section.side-by-side figure:nth-of-type(2) {
+    right: 5%;
+  }
+</style>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-K4SBB2EN2W', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    
+    <div class="reveal">
+      <div class="slides">
+  
+
+    
+<section data-noprocess data-shortcode-slide
+      data-background="#0ea5e6">
+  
+<h2 id="welcome-to-the-docker-workshop">Welcome to the Docker Workshop</h2>
+<p><em>(Work in Progress)</em></p>
+<p>Ryan Cosentino</p>
+<img src="/softdev2-resources/images/docker/docker.png" alt="Docker Logo" width="400"/>
+</section>
+
+<section data-noprocess data-shortcode-slide
+      data-background="#0ea5e6">
+  
+<h2 id="what-is-docker">What is Docker?</h2>
+<p>Docker is an OS-level virtualization software that is used to build and run isolated software environments called containers.</p>
+
+
+<span class='fragment '
+  >
+  <h4 id="what-does-containerization-mean">What does containerization mean?</h4>
+<p>With virtual machines that you get from VirtualBox, entire operating systems are virtualized. While this allows for greater flexibility, it comes with a considerable performance cost. On the other hand, containerization (which is a type of OS-level virtualization) involves isolating running processes at the OS level, meaning that while processes are in a way isolated from one another, they still share the same underlying operating system with the host.</p>
+
+</span>
+</section>
+
+<section data-noprocess data-shortcode-slide
+      data-background="#0ea5e6">
+  
+<img src="/softdev2-resources/images/docker/container-vs-vm.jpg" alt="container vs vm" width="800"/>
+<p><a href="https://www.weave.works/blog/a-practical-guide-to-choosing-between-docker-containers-and-vms">(Image Source)</a></p>
+<p>In a way Docker is similar to virtual desktops in Windows or macOS where you can isolate open windows into different desktops. Although the windows in one desktop are isolated from those in another, they are still ordinary programs and not at all &ldquo;virtualized&rdquo; in the virtual machine sense. In this example different windows are isolated with help from the window manager, however with Docker processes are isolated at the kernel level. The specific technologies that make this possible will be summarized at the end.</p>
+</section>
+
+<section data-noprocess data-shortcode-slide
+      data-background="#0ea5e6">
+  
+<h2 id="installing-docker">Installing Docker</h2>
+<p>First download and install <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>.</p>
+<p>In order to use the Docker command line client, Docker Desktop must be running. To verify that Docker is installed and running, execute the following in your terminal:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker version
+</code></pre></div><p>The output should contain a section for</p>
+<ul>
+<li>Client: Docker Engine - Community, and</li>
+<li>Server: Docker Engine - Community</li>
+</ul>
+</section><section>
+<h2 id="images-and-containers">Images and Containers</h2>
+<p><strong>Images</strong> are read only templates containing libraries, programs, data etc. that are used to create docker containers. A <strong>container</strong> is a runnable instance of an image. To use an OOP analogy, you can think of images as classes and containers as instances.</p>
+
+
+<span class='fragment '
+  >
+  <p><a href="https://hub.docker.com/">Docker Hub</a> is the largest public registry of Docker images and contains images ranging from Linux distributions like Ubuntu or Debian to collections of prepackaged software like MySQL or PostgreSQL. Images can be tagged such as</p>
+<ul>
+<li><code>python:3.9.1</code> aka Python version 3.9.1</li>
+<li><code>python:3.9.1-buster</code> based on the Debian 10 (Buster) Linux distribution</li>
+<li><code>python:3.9.1-alpine</code> based on the minimal Linux distribution Alpine</li>
+</ul>
+<p>If a tag isn&rsquo;t supplied, Docker will use the <code>:latest</code> tag.</p>
+
+</span>
+</section><section>
+<h2 id="first-container">First Container</h2>
+<p>First we&rsquo;ll create and run an Ubuntu container:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker run -it --rm ubuntu bash
+</code></pre></div><p>where</p>
+<ul>
+<li><code>-it</code> is short for <code>--interactive --tty</code> and starts the container in interactive mode</li>
+<li><code>--rm</code> deletes the container after it exits (but not the image)</li>
+<li><code>ubuntu</code> is the name of the image</li>
+<li><code>bash</code> is the command executed when the container starts<br>
+(technically bash is already the default entrypoint for the Ubuntu image and is only used here to showcase the [COMMAND] argument)</li>
+</ul>
+</section><section>
+<h2 id="first-container-1">First Container</h2>
+<p>If this is your first time using the Ubuntu image Docker will first download it from Docker Hub. If everything has gone according to plan, you should see a new prompt similar to</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>root@a5d9a7a5232c:/#
+</code></pre></div>
+
+<span class='fragment '
+  >
+  <p>You can try running commands like <code>ls</code> to list files and folders:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ ls
+bin  boot  dev  etc  home  lib  ...  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+</code></pre></div><p>or <code>ps aux</code> to list running processes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         <span style="color:#ae81ff">1</span>  1.0  0.1   <span style="color:#ae81ff">4112</span>  <span style="color:#ae81ff">3492</span> pts/0    Ss   17:13   0:00 /bin/bash
+root        <span style="color:#ae81ff">10</span>  0.0  0.1   <span style="color:#ae81ff">5900</span>  <span style="color:#ae81ff">3024</span> pts/0    R+   17:13   0:00 ps aux
+</code></pre></div></section><section>
+<h2 id="first-container">First Container</h2>
+<p>To quit, run the command <code>exit</code>. Since <code>bash</code> (PID 1) was the initial process used to start the container, once it exits, the container stops.</p>
+<p>Because we used the <code>--rm</code> option, Docker should delete the container once it exits which you can verify by typing</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker container ls -a
+</code></pre></div><p>however the Ubuntu image should still be saved locally:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker image ls
+</code></pre></div><p>You could also try running Python instead of bash:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>docker run -it --rm python:slim python
+</code></pre></div>
+</span>
+</section><section>
+<h2 id="dockerfiles">Dockerfiles</h2>
+<p>Say you&rsquo;d like to slightly customize an image available on Docker Hub. If your trying to run a Python application you could start off with the image <code>python:slim</code>, add your application, and install any dependencies to create an image specific to your app. This is done using a Dockerfile.</p>
+<p>(I&rsquo;m sure you&rsquo;ve seen plenty in GitHub repositories before).</p>
+</section><section>
+<h2 id="dockerfiles-1">Dockerfiles</h2>
+<p>work in progress</p>
+</section><section>
+<h2 id="how-docker-works">How Docker Works</h2>
+<p>On Linux, Docker utilizes two technologies of the Linux kernel to achieve this isolation:</p>
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Linux_namespaces">Namespaces</a> are used to isolate kernel resources such as mounted file systems, hostnames, process IDs, and user IDs. A single container will have a namespace for each of these resources.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Cgroups">cgroups</a> (control groups) are used to isolate system resources such as CPU, memory, disk I/O, and networking.</p>
+</li>
+</ul>
+</section><section>
+<h2 id="how-docker-works-1">How Docker Works</h2>
+<p>Essentially, whenever a process tries to access kernel resources, the kernel uses the process&rsquo;s allocated namespace to determine which resource to provide. For example, in a container&rsquo;s PID namespace Apache might be running with process ID 1, but it might have process ID 650 in the initial (&ldquo;root&rdquo;) PID namespace that was created when the computer started. From the root PID namespace&rsquo;s perspective, Apache is just another process along with all the other processes running on the operating system, however from Apache&rsquo;s perspective, it looks like it&rsquo;s running alone with possibly a few additional processes used in the container. Other resources can also be containerized in this way. In one container the path <code>/bin/bash</code> could point to the Bourne Again Shell executable while in another container the file might not exist. This determination is made at the kernel level and completely transparent to the processes running inside the container.</p>
+<p>While a technical understanding of technologies mentioned above isn&rsquo;t necessary to effectively use Docker, it often helps in understanding the &ldquo;why&rdquo; aspect of many components of Docker. For more details on how container can be implemented, check out this <a href="https://www.youtube.com/watch?v=8fi7uSYlOdc">video</a> where a simple version of Docker is implemented in Go.</p>
+</section>
+
+  
+
+
+</div>
+      
+
+    </div>
+<script type="text/javascript" src=/softdev2-resources/reveal-hugo/object-assign.js></script>
+
+<a href="/softdev2-resources/reveal-js/css/print/" id="print-location" style="display: none;"></a>
+<script type="text/javascript">
+  var printLocationElement = document.getElementById('print-location');
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = printLocationElement.href + (window.location.search.match(/print-pdf/gi) ? 'pdf.css' : 'paper.css');
+  document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+
+<script type="application/json" id="reveal-hugo-site-params">{"custom_theme":"reveal-hugo/themes/robot-lung.css","height":720,"history":true,"slide_number":true,"width":1280}</script>
+<script type="application/json" id="reveal-hugo-page-params">null</script>
+
+<script src="/softdev2-resources/reveal-js/js/reveal.js"></script>
+
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+  
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams));
+  Reveal.initialize(options);
+</script>
+
+
+  
+  
+  <script type="text/javascript" src="/softdev2-resources/reveal-js/plugin/markdown/marked.js"></script>
+  
+  <script type="text/javascript" src="/softdev2-resources/reveal-js/plugin/markdown/markdown.js"></script>
+  
+  <script type="text/javascript" src="/softdev2-resources/reveal-js/plugin/highlight/highlight.js"></script>
+  
+  <script type="text/javascript" src="/softdev2-resources/reveal-js/plugin/zoom-js/zoom.js"></script>
+  
+  
+  <script type="text/javascript" src="/softdev2-resources/reveal-js/plugin/notes/notes.js"></script>
+
+
+
+    <a class="home-link" href="/softdev2-resources/">Home</a>
+
+    
+  </body>
+</html>
