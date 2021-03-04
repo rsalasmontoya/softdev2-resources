@@ -65,7 +65,7 @@ if (!doNotTrack) {
 
 </span>
 </section><section>
-<img src="/softdev2-resources/images/docker/container-vs-vm.jpg" alt="container vs vm" width="800"/>
+<img src="/softdev2-resources/images/docker/container-vs-vm.jpg" alt="container vs vm" width="600"/>
 <p><a href="https://www.weave.works/blog/a-practical-guide-to-choosing-between-docker-containers-and-vms">(Image Source)</a></p>
 <p>In a way Docker is similar to virtual desktops in Windows or macOS where you can isolate open windows into different desktops. Although the windows in one desktop are isolated from those in another, they are still ordinary programs and not at all &ldquo;virtualized&rdquo; in the virtual machine sense. In this example different windows are isolated with help from the window manager, however with Docker processes are isolated at the kernel level. The specific technologies that make this possible will be summarized at the end.</p>
 </section><section>
@@ -131,21 +131,17 @@ root        <span style="color:#ae81ff">10</span>  0.0  0.1   <span style="color
 </code></pre></div><p>or factor very large numbers:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ factor 12345678901010101010101010987654321
 12345678901010101010101010987654321: 19 853 32069 398053 465067 128312953569637
-</code></pre></div>
-
-<span class='fragment '
-  >
-  <p>or:</p>
+</code></pre></div></section><section>
+<h2 id="first-container-3">First Container</h2>
+<p>or:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ yes Dr. Gunay is awesome
 Dr. Gunay is awesome
 Dr. Gunay is awesome
 Dr. Gunay is awesome
 Dr. Gunay is awesome
 ...
-</code></pre></div>
-</span>
-</section><section>
-<h2 id="first-container-3">First Container</h2>
+</code></pre></div></section><section>
+<h2 id="first-container-4">First Container</h2>
 <p>To quit, run the command <code>exit</code>. Since <code>bash</code> (PID 1) was the initial process used to start the container, once it exits, the container stops.</p>
 <p>Because we used the <code>--rm</code> option, Docker should delete the container once it exits which you can verify by typing</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker container ls -a
@@ -153,20 +149,21 @@ Dr. Gunay is awesome
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker image ls
 REPOSITORY        TAG           IMAGE ID       CREATED       SIZE
 ubuntu            latest        f63181f19b2f   12 days ago   72.9MB
-</code></pre></div>
-
-<span class='fragment '
-  >
-  <p>You could also try running Python instead of bash:</p>
+</code></pre></div></section><section>
+<h2 id="running-python">Running Python</h2>
+<p>As another example, you can also try running Python instead of bash:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker run -it --rm python:slim python
 
 Python 3.9.1 (default, Jan 12 2021, 16:56:42)
 [GCC 8.3.0] on linux
 Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
-&gt;&gt;&gt;
-</code></pre></div>
-</span>
-</section><section>
+&gt;&gt;&gt; a = 5
+&gt;&gt;&gt; print(a + 2)
+7
+&gt;&gt;&gt; exit()
+
+$
+</code></pre></div></section><section>
 <h2 id="dockerfiles">Dockerfiles</h2>
 <p>Say you&rsquo;d like to slightly customize an image available on Docker Hub. If you&rsquo;re trying to run a Python application you could start off with the image <code>python:slim</code>, add your application, and install any dependencies to create an image specific to your app. This is done using a Dockerfile.</p>
 
@@ -200,8 +197,12 @@ Executes <code>&lt;command&gt;</code> whenever the container starts</p>
 </section><section>
 <h2 id="python-dockerfile">Python Dockerfile</h2>
 <p>Create the file <code>hello.py</code> somewhere on your computer with the following lines:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>name <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;What is your name? &#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape><span style="color:#f92672">import</span> os
+
+name <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;What is your name? &#39;</span>)
 <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;Hello {name}!&#39;</span>)
+
+<span style="color:#66d9ef">print</span>(os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;GOODBYE&#39;</span>))
 </code></pre></div>
 
 <span class='fragment '
@@ -214,7 +215,9 @@ Executes <code>&lt;command&gt;</code> whenever the container starts</p>
 <p>In the same folder as <code>hello.py</code>, create the file <code>Dockerfile</code> and add:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.9-slim</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># You can also add comments :0</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> GOODBYE<span style="color:#f92672">=</span>adios
+
+<span style="color:#75715e"># You can also add comments :0</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> hello.py .<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> python hello.py<span style="color:#960050;background-color:#1e0010">
@@ -236,7 +239,8 @@ hello             latest        50b4f80bd32a   13 seconds ago   114MB
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker run -it --rm hello
 What is your name? bob
 Hello bob!
-</code></pre></div><p>After entering your name, the container should print a greeting and exit. Because of the <code> --rm</code> option, the container shold be deleted.</p>
+adios
+</code></pre></div><p>After entering your name, the container should print a greeting, a closing, and then exit. Because of the <code> --rm</code> option, the container should be deleted.</p>
 </section><section>
 <h2 id="how-docker-works">How Docker Works</h2>
 <p>On Linux, Docker utilizes two technologies of the Linux kernel to achieve this containerization:</p>
@@ -251,7 +255,9 @@ Hello bob!
 </section><section>
 <h2 id="how-docker-works-wip">How Docker Works (WIP)</h2>
 <p>Essentially, whenever a process tries to access kernel resources, the kernel uses the process&rsquo;s allocated namespace to determine which resource to provide. For example, in a container&rsquo;s PID namespace Apache might be running with process ID 1, but it might have process ID 650 in the initial (&ldquo;root&rdquo;) PID namespace that was created when the computer started. From the root PID namespace&rsquo;s perspective, Apache is just another process along with all the other processes running on the operating system, however from Apache&rsquo;s perspective, it looks like it&rsquo;s running alone with possibly a few additional processes used in the container. Other resources can also be containerized in this way. In one container the path <code>/bin/bash</code> could point to the Bourne Again Shell executable while in another container the file might not exist. This determination is made at the kernel level and completely transparent to the processes running inside the container.</p>
-<p>While a technical understanding of technologies mentioned above isn&rsquo;t necessary to effectively use Docker, it often helps in understanding the &ldquo;why&rdquo; aspect of many components of Docker. For more details on how container can be implemented, check out this <a href="https://www.youtube.com/watch?v=8fi7uSYlOdc">video</a> where a simple version of Docker is implemented in Go.</p>
+</section><section>
+<h2 id="how-docker-works-wip-1">How Docker Works (WIP)</h2>
+<p>While a technical understanding of technologies mentioned above isn&rsquo;t necessary to effectively use Docker, it often helps in understanding the &ldquo;why&rdquo; aspect of many components of Docker. For more details on how containers can be implemented, check out this <a href="https://www.youtube.com/watch?v=8fi7uSYlOdc">video</a> where a simple version of Docker is implemented in Go.</p>
 </section>
 
   
