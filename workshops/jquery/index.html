@@ -61,7 +61,7 @@ and source code <a href="https://github.com/jquery/jquery">here</a>.</p>
 </section><section>
 <h2 id="why-jquery">Why jQuery?</h2>
 <p>While most features available in jQuery are also available with standard JavaScript, jQuery&rsquo;s methods are often easier to use and more concise.</p>
-<p>One additional benefit of using jQuery methods is that they take subtle browser differences into account. Specifically, a particular jQuery method might be implemented slightly differently on Chrome vs Internet Explorer 11 in order to achieve the same effect. If you use plain JavaScript you would need to take these browser differences into consideration yourself in order to achieve perfect cross browser compatibility.</p>
+<p>One additional benefit of using jQuery methods is that they take subtle browser differences into account. Specifically, a jQuery method might be implemented differently on Chrome vs Internet Explorer 11 in order to achieve the same effect. If you use plain JavaScript you would need to take these browser differences into account yourself in order to achieve the same level of cross browser compatibility.</p>
 </section><section>
 <h2 id="installing-jquery">&ldquo;Installing&rdquo; jQuery</h2>
 <p>While jQuery can be downloaded and used locally, it is commonly accessed via a CDN (content delivery network). One is provided by the jQuery website, although companies like Google and Microsoft also provide their own as a public service.</p>
@@ -104,7 +104,7 @@ and source code <a href="https://github.com/jquery/jquery">here</a>.</p>
 <li><code>&quot;table&quot;</code> selects all <code>table</code> elements</li>
 <li><code>&quot;.warning&quot;</code> selects all elements with the <code>warning</code> class</li>
 <li><code>&quot;#nav&quot;</code> selects the element with an id of <code>nav</code></li>
-<li><code>&quot;p.mt-2 &gt; span[text-decoration=underline]&quot;</code> selects all underlined <code>span</code>&rsquo;s that are a direct child of a <code>p</code> with class <code>mt-2</code>.</li>
+<li><code>&quot;p.mt-2 &gt; img[alt^='cat']&quot;</code> selects all images whose alt text begins with <code>cat</code> that are also the direct child of a <code>p</code> with class <code>mt-2</code></li>
 </ul>
 </section><section>
 <h3 id="csspropertyname"><code>.css(propertyName)</code></h3>
@@ -112,8 +112,8 @@ and source code <a href="https://github.com/jquery/jquery">here</a>.</p>
 <h3 id="csspropertyname-value"><code>.css(propertyName, value)</code></h3>
 <p>This method sets the CSS property <code>propertyName</code> to <code>value</code> for all of the matched elements. For example, <code>$(&quot;h1&quot;).css(&quot;background-color&quot;, &quot;blue&quot;)</code> would set the background of all <code>h1</code> elements to <code>blue</code>.</p>
 <p>In the w3schools HTML editor, under the line <code>// Your Code</code>, add the line</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;h1&#34;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#34;font-family&#34;</span>, <span style="color:#e6db74">&#34;Fantasy&#34;</span>);<span style="color:#e6db74">`
-</span></code></pre></div><p>After pressing &ldquo;Run&rdquo; the header should be displayed in a decorative and playful font.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;h1&#34;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#34;font-family&#34;</span>, <span style="color:#e6db74">&#34;Fantasy&#34;</span>);
+</code></pre></div><p>After pressing &ldquo;Run&rdquo; the header should be displayed in a decorative and playful font.</p>
 </section><section>
 <h2 id="addclassclassname"><code>addClass(className)</code></h2>
 <p>This method takes one or more space-separated CSS class names and adds them to each of the matched elements.</p>
