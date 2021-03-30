@@ -66,11 +66,11 @@ if (!doNotTrack) {
 </span>
 </section><section>
 <img src="/softdev2-resources/images/docker/container-vs-vm.jpg" alt="container vs vm" width="600"/>
-<p><a href="https://www.weave.works/blog/a-practical-guide-to-choosing-between-docker-containers-and-vms">(Image Source)</a></p>
+<p><a href="https://www.weave.works/blog/a-practical-guide-to-choosing-between-docker-containers-and-vms" target="_blank" rel="noreferrer noopener">(Image Source)</a></p>
 <p>In a way Docker is similar to virtual desktops in Windows or macOS where you can isolate open windows into different desktops. Although the windows in one desktop are isolated from those in another, they are still ordinary programs and not at all &ldquo;virtualized&rdquo; in the virtual machine sense. In this example different windows are isolated with help from the window manager, however with Docker processes are isolated at the kernel level. The specific technologies that make this possible will be summarized at the end.</p>
 </section><section>
 <h2 id="installing-docker">Installing Docker</h2>
-<p>First download and install <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>.</p>
+<p>First download and install <a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noreferrer noopener">Docker Desktop</a>.</p>
 <p>In order to use the Docker command line client, Docker Desktop must be running. To verify that Docker is installed and running, run the following in your terminal:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker version
 </code></pre></div><p>The output should contain a section for</p>
@@ -85,7 +85,7 @@ if (!doNotTrack) {
 
 <span class='fragment '
   >
-  <p><a href="https://hub.docker.com/">Docker Hub</a> is the largest public registry of Docker images and contains images ranging from Linux distributions like Ubuntu or Debian to collections of prepackaged software like MySQL or PostgreSQL. Images can be tagged such as</p>
+  <p><a href="https://hub.docker.com/" target="_blank" rel="noreferrer noopener">Docker Hub</a> is the largest public registry of Docker images and contains images ranging from Linux distributions like Ubuntu or Debian to collections of prepackaged software like MySQL or PostgreSQL. Images can be tagged such as</p>
 <ul>
 <li><code>python:3.9.1</code> aka Python version 3.9.1</li>
 <li><code>python:3.9.1-buster</code> based on the Debian 10 (Buster) Linux distribution</li>
@@ -193,7 +193,7 @@ Sets the environment variable <code>&lt;key&gt;</code> to <code>&lt;value&gt;</c
 Executes <code>&lt;command&gt;</code> whenever the container starts</p>
 </li>
 </ul>
-<p>You can read more about all the different commands <a href="https://docs.docker.com/engine/reference/builder/">here</a>.</p>
+<p>You can read more about all the different commands <a href="https://docs.docker.com/engine/reference/builder/" target="_blank" rel="noreferrer noopener">here</a>.</p>
 </section><section>
 <h2 id="python-dockerfile">Python Dockerfile</h2>
 <p>Create the file <code>hello.py</code> somewhere on your computer with the following lines:</p>
@@ -246,10 +246,10 @@ adios
 <p>On Linux, Docker utilizes two technologies of the Linux kernel to achieve this containerization:</p>
 <ul>
 <li>
-<p><a href="https://en.wikipedia.org/wiki/Linux_namespaces">Namespaces</a> are used to isolate kernel resources such as mounted file systems, hostnames, process IDs, and user IDs. A single container will have a namespace for each of these resources.</p>
+<p><a href="https://en.wikipedia.org/wiki/Linux_namespaces" target="_blank" rel="noreferrer noopener">Namespaces</a> are used to isolate kernel resources such as mounted file systems, hostnames, process IDs, and user IDs. A single container will have a namespace for each of these resources.</p>
 </li>
 <li>
-<p><a href="https://en.wikipedia.org/wiki/Cgroups">cgroups</a> (control groups) are used to isolate system resources such as CPU, memory, disk I/O, and networking.</p>
+<p><a href="https://en.wikipedia.org/wiki/Cgroups" target="_blank" rel="noreferrer noopener">cgroups</a> (control groups) are used to isolate system resources such as CPU, memory, disk I/O, and networking.</p>
 </li>
 </ul>
 </section><section>
@@ -257,7 +257,7 @@ adios
 <p>Essentially, whenever a process tries to access kernel resources, the kernel uses the process&rsquo;s allocated namespace to determine which resource to provide. For example, in a container&rsquo;s PID namespace Apache might be running with process ID 1, but it might have process ID 650 in the initial (&ldquo;root&rdquo;) PID namespace that was created when the computer started. From the root PID namespace&rsquo;s perspective, Apache is just another process along with all the other processes running on the operating system, however from Apache&rsquo;s perspective, it looks like it&rsquo;s running alone with possibly a few additional processes used in the container. Other resources can also be containerized in this way. In one container the path <code>/bin/bash</code> could point to the Bourne Again Shell executable while in another container the file might not exist. This determination is made at the kernel level and completely transparent to the processes running inside the container.</p>
 </section><section>
 <h2 id="how-docker-works-wip-1">How Docker Works (WIP)</h2>
-<p>While a technical understanding of technologies mentioned above isn&rsquo;t necessary to effectively use Docker, it often helps in understanding the &ldquo;why&rdquo; aspect of many components of Docker. For more details on how containers can be implemented, check out this <a href="https://www.youtube.com/watch?v=8fi7uSYlOdc">video</a> where a simple version of Docker is implemented in Go.</p>
+<p>While a technical understanding of technologies mentioned above isn&rsquo;t necessary to effectively use Docker, it often helps in understanding the &ldquo;why&rdquo; aspect of many components of Docker. For more details on how containers can be implemented, check out this <a href="https://www.youtube.com/watch?v=8fi7uSYlOdc" target="_blank" rel="noreferrer noopener">video</a> where a simple version of Docker is implemented in Go.</p>
 </section>
 
   
