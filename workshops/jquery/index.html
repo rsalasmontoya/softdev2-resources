@@ -216,8 +216,8 @@ and source code <a href="https://github.com/jquery/jquery" target="_blank" rel="
 <li><code>find(selector)</code> gets the descendants of each matched element, filtered by a selector.</li>
 </ul>
 </section><section>
-<h2 id="even-handling">Even Handling</h2>
-<p>Even handling can be used to execute code when events are triggered, such as key presses or mouse movements. Add a button under the table in the body:</p>
+<h2 id="event-handling">Event Handling</h2>
+<p>Event handling can be used to execute code when events are triggered, such as key presses or mouse movements. Add a button under the table in the body:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;courses&#34;</span>&gt;
 	&lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">th</span>&gt;Subject&lt;/<span style="color:#f92672">th</span>&gt;&lt;<span style="color:#f92672">th</span>&gt;Number&lt;/<span style="color:#f92672">th</span>&gt;&lt;<span style="color:#f92672">th</span>&gt;Title&lt;/<span style="color:#f92672">th</span>&gt;&lt;/<span style="color:#f92672">tr</span>&gt;
 &lt;/<span style="color:#f92672">table</span>&gt;
@@ -229,7 +229,7 @@ and source code <a href="https://github.com/jquery/jquery" target="_blank" rel="
 </span><span style="display:block;width:100%;background-color:#3c3d38">	<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#courses&#34;</span>).<span style="color:#a6e22e">toggleClass</span>(<span style="color:#e6db74">&#34;lightgray&#34;</span>);
 </span><span style="display:block;width:100%;background-color:#3c3d38">});
 </span></code></pre></div></section><section>
-<h2 id="even-handling-1">Even Handling</h2>
+<h2 id="event-handling-1">Event Handling</h2>
 <p>The <code>.click(function)</code> method executes <code>function</code> whenever the selected elements are clicked. In our case, we&rsquo;re toggling the previously defined <code>lightgray</code> class on our table. Basically, if the table isn&rsquo;t assigned the class, then jQuery adds it, and if the table already has the class, jQuery removes it.</p>
 <p>After pressing the button, your table should turn gray, and pressing it again should restore the original background:</p>
 <img src="/softdev2-resources/images/jquery/table-5-click.png" width="400" style="border: none;"/>
