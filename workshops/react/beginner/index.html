@@ -1,62 +1,72 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-<title>React for Beginners</title>
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Intermediate Agile Software Development</title>
 <meta name="description" content="Lectures and other resources for teaching and learning about software development">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="/softdev2-resources/reveal-js/css/reset.css">
-<link rel="stylesheet" href="/softdev2-resources/reveal-js/css/reveal.css"><link rel="stylesheet" href="/softdev2-resources/reveal-hugo/themes/robot-lung.css" id="theme"><link rel="stylesheet" href="/softdev2-resources/highlight-js/default.min.css">
-    <style>
-  .reveal strong {
-    color: blue;
-  }
-  .home-link {
-    position: absolute;
-    left: 10px;
-    bottom: 5px;          
-  }
-  .reveal section.side-by-side figure {
-    position: absolute;
-  }
-  .reveal section.side-by-side figure:first-of-type {
-    left: 5%;
-  }
-  .reveal section.side-by-side figure:nth-of-type(2) {
-    right: 5%;
-  }
-</style>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-K4SBB2EN2W', 'auto');
-	
-	ga('send', 'pageview');
-}
+<meta name="generator" content="Hugo 0.82.0" />
+<link href="https://ggc-sd.github.io/softdev2-resources//index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://ggc-sd.github.io/softdev2-resources/workshops/react/beginner/">
+<link rel="stylesheet" href="https://ggc-sd.github.io/softdev2-resources/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://ggc-sd.github.io/softdev2-resources/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://ggc-sd.github.io/softdev2-resources/js/bundle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K4SBB2EN2W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K4SBB2EN2W');
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+<style>
+:root {}
+</style>
+<meta property="og:title" content="" />
+<meta property="og:description" content="Lectures and other resources for teaching and learning about software development" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ggc-sd.github.io/softdev2-resources/workshops/react/beginner/" /><meta property="og:image" content="https://ggc-sd.github.io/softdev2-resources/images/og-image.png"/>
 
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ggc-sd.github.io/softdev2-resources/images/og-image.png"/>
 
-  </head>
-  <body>
-    
-    <div class="reveal">
-      <div class="slides">
-  
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Lectures and other resources for teaching and learning about software development"/>
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Lectures and other resources for teaching and learning about software development"></head>
+<body><div class="container"><header>
+<h1>Intermediate Agile Software Development</h1>
 
-    <section></section><section>
-<h3 id="welcome-to-the-react-for-beginners-course">Welcome to the React for beginners course</h3>
-</section><section>
+ <span class="version">Version 0.1.1</span>
+<a href="https://github.com/GGC-SD/softdev2-resources" class="github"><i class="fab fa-github"></i></a>
+<p class="description">Lectures and other resources for teaching and learning about software development</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="/softdev2-resources/">Home</a></li>
+<li><a href="/softdev2-resources/about">About</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1></h1><h3 id="welcome-to-the-react-for-beginners-course">Welcome to the React for beginners course</h3>
+<p>+++
+title = &ldquo;React for Beginners&rdquo;
+outputs = [&ldquo;Reveal&rdquo;]
+weight = 01 # chapter number
+author = &ldquo;Alex Abraham&rdquo;
++++</p>
+<hr>
+<h3 id="welcome-to-the-react-for-beginners-course-1">Welcome to the React for beginners course</h3>
+<hr>
 <h1 id="what-is-react-js">What is React Js?</h1>
 <h2 id="a-javascript-library-for-building-user-interfaces">A JavaScript library for building user interfaces</h2>
 <h1 id="for-web-as-well-as-mobile-applications">For web as well as mobile applications</h1>
 <p>Developed by a team at Facebook in 2011</p>
-</section><section>
+<hr>
 <h3 id="heading"></h3>
 <ul>
 <li>It is an open-source, reusable component based front-end library</li>
@@ -64,18 +74,18 @@ if (!doNotTrack) {
   the app looks and feels"</li>
 <li>Currently one of the most popular libraries for building Javascript libraries"</li>
 </ul>
-</section><section>
+<hr>
 <h3 id="components">Components</h3>
 <h2>-A piece of the Ui-</h2>
 <p>Independent, isolated, and reuable components, which become the building blocks to 
 a more complex user interface.</p>
 <p>In react, webpages are just the combination of many children components</p>
-</section><section>
+<hr>
 <h3 id="app">App</h3>
 <h2>-Root Component-</h2>
 <p>Every React application has at least one component known as the Root Component (Most of the time named the App component)</p>
 <p>This component represents the entire application and is where all the child components are displayed</p>
-</section><section>
+<hr>
 <h3 id="heading-1"></h3>
 <table style ="padding: 0; margin: 0; border-spacing: 0px;">
   <tr>
@@ -94,7 +104,7 @@ a more complex user interface.</p>
       </td>
     </tr>
   </table>
-</section><section>
+<hr>
 <h3 id="heading-2"></h3>
  <h2>Twitter Site</h2>
  <p>Take a look at all the <strong>components</strong> (which are all the rectangles with red borders)</p>
@@ -109,91 +119,348 @@ a more complex user interface.</p>
       </td>
 </tr>
 </table>
-</section><section>
+<hr>
 <h3 id="heading-3"></h3>
 <h1>Getting started!</h1>
 <h2>Install NodeJs</h2>
 <a href="https://nodejs.org/en/" target="_blank">NodeJS download site</a>
 <p>We wont be using nodeJS, but we will be downloading it for its packager tool (npm), to install 3rd party plugins</p>
 <p> Every time we use npm, we are using NodeJs's packager tool</p>
-</section><section>
+<hr>
 <h3 id="heading-4"></h3>
 <p>Open your command prompt/termianl prompt on Windows/Mac</p>
 <p>Type: <strong> node -v</strong></p>
 <p>This is to see our version of nodeJs on our device, if there's an error, nodeJs didnt succesfully download</p>
 <p>Type: <strong> npm i -g create-react-app first-react-app</strong> (i= stands for install, and -g= stands for global, first-react-app is the name of our project)</p>
 <p>If it works, congrats you've created your very first react app</p>
-</section>
+<div class="edit-meta">
 
+<br><a href="https://github.com/GGC-SD/softdev2-resources/edit/master/content/workshops/react/Beginner/_index.md" class="edit-page"><i class="fas fa-pen-square"></i> Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://ggc-sd.github.io/softdev2-resources/workshops/git/intermediate/" title="Git Intermediate"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Git Intermediate</a>
+<a class="nav nav-next" href="https://ggc-sd.github.io/softdev2-resources/workshops/cloud/azure/" title="Azure Cloud Workshop">Next - Azure Cloud Workshop <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/">Home</a></li>
+
+<li class="parent"><a href="https://ggc-sd.github.io/softdev2-resources/workshops/">Workshops</a>
   
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/docker/">Docker Workshop</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/jquery/">jQuery Workshop</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/bootstrap/">Bootstrap Workshop</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/angular/">Git Workshops</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/angular/beginner/">Angular for Beginners</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/angular/practicereveal/">For Practice, will delete later</a>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/git/">Git Workshops</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/git/beginner/">Git Beginner</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/git/intermediate/">Git Intermediate</a>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class="parent"><a href="https://ggc-sd.github.io/softdev2-resources/workshops/react/">React Workshops</a>
+  
+<ul class="sub-menu">
+
+<li class="parent active"><a href="https://ggc-sd.github.io/softdev2-resources/workshops/react/beginner/"></a>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/cloud/">Cloud Development Workshops</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/cloud/azure/">Azure Cloud Workshop</a>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/selenium/">Selenium Workshops</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/selenium/beginner/">Selenium WebDriver for Beginners</a>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/python/">Python Workshops</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/python/intermediate/">Intermediate Python</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/workshops/python/beginner/">Python for Beginners</a>
+  
+</li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/">Student Materials</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-intro/">Re-introduction to Software Engineering</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-intro/chapter-tech/">Technology Overview</a>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-agiledevelopment/">Agile Development</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-agiledevelopment/chapter-principles/">Agile Principles</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-agiledevelopment/chapter-scrum/">Scrum</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-agiledevelopment/chapter-kanban/">Kanban</a>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-requirements/">Requirements in Agile</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-requirements/chapter-userstories/">User Stories</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-requirements/chapter-teamwork/">Teamwork</a>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-version-control/">Version Control</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-version-control/github-social-computing/">Github Social Computing</a>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-jira/">Project Management with JIRA</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-project-design/">Project Design and Management</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-project-design/requirements-phase/">Requirements Phase</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-project-design/client-checkpoint-phase/">Client Checkpoint Phase</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-project-design/last-stretch-phase/">The Last Stretch Phase</a>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-software-protection/">Software Protection</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-software-protection/intellectual-property/">Intellectual Property</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/student/chapter-software-protection/licensing/">Licensing Software</a>
+  
+</li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/">Instructor Materials</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/schedule/">Schedule</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/syllabus/">Syllabus</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/gradebook/">Gradebook</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/exams/">Exams</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/exams/midterm/">Midterm</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/exams/final/">Final</a>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/">Assignments</a>
+  
+<ul class="sub-menu">
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn1a/">Assgn 1a</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn1b/">Assgn 1b</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn1c/">Assgn 1c</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn2a/">Assgn 2a</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn2b/">Assgn 2b</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn3a/">Assgn 3a</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn3b/">Assgn 3b</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn4a/">Assgn 4a</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn4b/">Assgn 4b</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn5a/">Assgn 5a</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn5b/">Assgn 5b</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn6a/">Assgn 6a</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn6b/">Assgn 6b</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn7/">Assgn 7</a>
+  
+</li>
+
+<li class=""><a href="https://ggc-sd.github.io/softdev2-resources/instructor/assignments/presentations/">Presentations</a>
+  
+</li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+</ul>
+</nav>
 
 
+
+<div class="sidebar-footer"></div>
 </div>
-      
-
-    </div>
-<script type="text/javascript" src=/softdev2-resources/reveal-hugo/object-assign.js></script>
-
-<a href="/softdev2-resources/reveal-js/css/print/" id="print-location" style="display: none;"></a>
-<script type="text/javascript">
-  var printLocationElement = document.getElementById('print-location');
-  var link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.type = 'text/css';
-  link.href = printLocationElement.href + (window.location.search.match(/print-pdf/gi) ? 'pdf.css' : 'paper.css');
-  document.getElementsByTagName('head')[0].appendChild(link);
-</script>
-
-<script type="application/json" id="reveal-hugo-site-params">{"custom_theme":"reveal-hugo/themes/robot-lung.css","height":720,"history":true,"slide_number":true,"width":1280}</script>
-<script type="application/json" id="reveal-hugo-page-params">null</script>
-
-<script src="/softdev2-resources/reveal-js/js/reveal.js"></script>
-
-<script type="text/javascript">
-  
-  
-  function camelize(map) {
-    if (map) {
-      Object.keys(map).forEach(function(k) {
-        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
-        if (newK != k) {
-          map[newK] = map[k];
-          delete map[k];
-        }
-      });
-    }
-    return map;
-  }
-  
-  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
-  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
-  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
-  
-  var options = Object.assign({},
-    camelize(revealHugoDefaults),
-    camelize(revealHugoSiteParams),
-    camelize(revealHugoPageParams));
-  Reveal.initialize(options);
-</script>
-
-
-  
-  
-  <script type="text/javascript" src="/softdev2-resources/reveal-js/plugin/markdown/marked.js"></script>
-  
-  <script type="text/javascript" src="/softdev2-resources/reveal-js/plugin/markdown/markdown.js"></script>
-  
-  <script type="text/javascript" src="/softdev2-resources/reveal-js/plugin/highlight/highlight.js"></script>
-  
-  <script type="text/javascript" src="/softdev2-resources/reveal-js/plugin/zoom-js/zoom.js"></script>
-  
-  
-  <script type="text/javascript" src="/softdev2-resources/reveal-js/plugin/notes/notes.js"></script>
-
-
-
-    <a class="home-link" href="/softdev2-resources/">Home</a>
-
-    
-  </body>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
 </html>
