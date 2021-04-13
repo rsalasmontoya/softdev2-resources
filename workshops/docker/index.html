@@ -80,7 +80,7 @@ if (!doNotTrack) {
 </ul>
 </section><section>
 <h2 id="images-and-containers">Images and Containers</h2>
-<p><strong>Images</strong> are read only templates containing libraries, programs, data etc. that are used to create docker containers. A <strong>container</strong> is a runnable instance of an image. To use an OOP analogy, you can think of an image as a class and a container as an instances.</p>
+<p><strong>Images</strong> are read only templates containing libraries, programs, data etc. that are used to create docker containers. A <strong>container</strong> is a runnable instance of an image. To use an OOP analogy, you can think of an image as a class and a container as an instance.</p>
 
 
 <span class='fragment '
@@ -100,7 +100,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker run -it --rm ubuntu bash
 </code></pre></div><p>where</p>
 <ul>
-<li><code>-it</code> is short for <code>--interactive --tty</code> and starts the container in interactive mode</li>
+<li><code>-it</code> is short for <code>--interactive --tty</code> which starts the container in interactive mode and lets you enter text via the terminal</li>
 <li><code>--rm</code> deletes the container after it exits (but not the image)</li>
 <li><code>ubuntu</code> is the name of the image</li>
 <li><code>bash</code> is the command executed when the container starts<br>
@@ -128,12 +128,13 @@ bin  boot  dev  etc  home  lib  ...  media  mnt  opt  proc  root  run  sbin  srv
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root         <span style="color:#ae81ff">1</span>  1.0  0.1   <span style="color:#ae81ff">4112</span>  <span style="color:#ae81ff">3492</span> pts/0    Ss   17:13   0:00 /bin/bash
 root        <span style="color:#ae81ff">10</span>  0.0  0.1   <span style="color:#ae81ff">5900</span>  <span style="color:#ae81ff">3024</span> pts/0    R+   17:13   0:00 ps aux
-</code></pre></div><p>or factor very large numbers:</p>
+</code></pre></div><p><strong>Note:</strong> If this were a virtual machine, you would see tens, possibly hundreds of running processes instead of a small list of isolated ones.</p>
+</section><section>
+<h2 id="first-container-3">First Container</h2>
+<p>You can also try factoring very large numbers:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ factor 12345678901010101010101010987654321
 12345678901010101010101010987654321: 19 853 32069 398053 465067 128312953569637
-</code></pre></div></section><section>
-<h2 id="first-container-3">First Container</h2>
-<p>or:</p>
+</code></pre></div><p>or:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ yes Dr. Gunay is awesome
 Dr. Gunay is awesome
 Dr. Gunay is awesome
@@ -152,17 +153,31 @@ ubuntu            latest        f63181f19b2f   12 days ago   72.9MB
 </code></pre></div></section><section>
 <h2 id="running-python">Running Python</h2>
 <p>As another example, you can also try running Python instead of bash:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker run -it --rm python:slim python
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker run -it --rm python:slim
 
 Python 3.9.1 (default, Jan 12 2021, 16:56:42)
 [GCC 8.3.0] on linux
 Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
+
 &gt;&gt;&gt; a = 5
 &gt;&gt;&gt; print(a + 2)
 7
-&gt;&gt;&gt; exit()
 
-$
+&gt;&gt;&gt; exit()
+</code></pre></div></section><section>
+<h2 id="running-python-27">Running Python 2.7</h2>
+<p>You can create containers for different versions of Python:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker run -it --rm python:2.7-slim
+
+Python 2.7.18 (default, Jan 12 2021, 16:56:42)
+[GCC 8.3.0] on linux
+Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
+
+&gt;&gt;&gt; a = 5
+&gt;&gt;&gt; print a+2
+7
+
+&gt;&gt;&gt; exit()
 </code></pre></div></section><section>
 <h2 id="dockerfiles">Dockerfiles</h2>
 <p>Say you&rsquo;d like to slightly customize an image available on Docker Hub. If you&rsquo;re trying to run a Python application you could start off with the image <code>python:slim</code>, add your application, and install any dependencies to create an image specific to your app. This is done using a Dockerfile.</p>
@@ -242,6 +257,9 @@ Hello bob!
 adios
 </code></pre></div><p>After entering your name, the container should print a greeting, a closing, and then exit. Because of the <code> --rm</code> option, the container should be deleted.</p>
 </section><section>
+
+
+<section data-shortcode-section>
 <h2 id="how-docker-works">How Docker Works</h2>
 <p>On Linux, Docker utilizes two technologies of the Linux kernel to achieve this containerization:</p>
 <ul>
@@ -252,12 +270,17 @@ adios
 <p><a href="https://en.wikipedia.org/wiki/Cgroups" target="_blank" rel="noreferrer noopener">cgroups</a> (control groups) are used to isolate system resources such as CPU, memory, disk I/O, and networking.</p>
 </li>
 </ul>
+<p>Click the down arrow for more information!</p>
 </section><section>
-<h2 id="how-docker-works-wip">How Docker Works (WIP)</h2>
-<p>Essentially, whenever a process tries to access kernel resources, the kernel uses the process&rsquo;s allocated namespace to determine which resource to provide. For example, in a container&rsquo;s PID namespace Apache might be running with process ID 1, but it might have process ID 650 in the initial (&ldquo;root&rdquo;) PID namespace that was created when the computer started. From the root PID namespace&rsquo;s perspective, Apache is just another process along with all the other processes running on the operating system, however from Apache&rsquo;s perspective, it looks like it&rsquo;s running alone with possibly a few additional processes used in the container. Other resources can also be containerized in this way. In one container the path <code>/bin/bash</code> could point to the Bourne Again Shell executable while in another container the file might not exist. This determination is made at the kernel level and completely transparent to the processes running inside the container.</p>
+<h2 id="how-docker-works-1">How Docker Works</h2>
+<p>Essentially, whenever a process tries to access kernel resources, the kernel uses the process&rsquo;s allocated namespace to determine which resource to provide.</p>
+<p>For example, in a container&rsquo;s PID namespace Apache might be running with process ID 1, but it might have process ID 650 in the initial (&ldquo;root&rdquo;) PID namespace that was created when the computer started. From the root PID namespace&rsquo;s perspective, Apache is just another process along with all the other processes running on the operating system, however from Apache&rsquo;s perspective, it looks like it&rsquo;s running alone with possibly a few additional processes used in the container.</p>
 </section><section>
-<h2 id="how-docker-works-wip-1">How Docker Works (WIP)</h2>
-<p>While a technical understanding of technologies mentioned above isn&rsquo;t necessary to effectively use Docker, it often helps in understanding the &ldquo;why&rdquo; aspect of many components of Docker. For more details on how containers can be implemented, check out this <a href="https://www.youtube.com/watch?v=8fi7uSYlOdc" target="_blank" rel="noreferrer noopener">video</a> where a simple version of Docker is implemented in Go.</p>
+<h2 id="how-docker-works-2">How Docker Works</h2>
+<p>Other resources can also be containerized in this way. In one container the path <code>/bin/bash</code> could point to the Bourne Again Shell executable while in another container the file might not exist. This determination is made at the kernel level and completely transparent to the processes running inside the container.</p>
+<p>While a technical understanding of the technologies mentioned above isn&rsquo;t necessary to effectively use Docker, it often helps in understanding the &ldquo;why&rdquo; aspect of many components of Docker. For more details on how containers can be implemented, check out this <a href="https://www.youtube.com/watch?v=8fi7uSYlOdc" target="_blank" rel="noreferrer noopener">video</a> where a simple version of Docker is implemented in Go.</p>
+
+</section>
 </section>
 
   
