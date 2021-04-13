@@ -165,7 +165,7 @@ Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34;
 &gt;&gt;&gt; exit()
 </code></pre></div></section><section>
 <h2 id="running-python-27">Running Python 2.7</h2>
-<p>You can create containers for different versions of Python:</p>
+<p>You can also create containers for different versions of Python:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker run -it --rm python:2.7-slim
 
 Python 2.7.18 (default, Jan 12 2021, 16:56:42)
@@ -179,7 +179,7 @@ Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34;
 &gt;&gt;&gt; exit()
 </code></pre></div></section><section>
 <h2 id="dockerfiles">Dockerfiles</h2>
-<p>Say you&rsquo;d like to slightly customize an image available on Docker Hub. If you&rsquo;re trying to run a Python application you could start off with the image <code>python:slim</code>, add your application, and install any dependencies to create an image specific to your app. This is done using a Dockerfile.</p>
+<p>Say you&rsquo;d like to slightly customize an image available on Docker Hub. If you&rsquo;re trying to run a Python application you could start off with the image <code>python:slim</code>, add your application and install any dependencies to create an image specific to your app. This is done using a Dockerfile.</p>
 
 
 <span class='fragment '
@@ -277,7 +277,7 @@ adios
 </section><section>
 <h2 id="how-docker-works-2">How Docker Works</h2>
 <p>Other resources can also be containerized in this way. In one container the path <code>/bin/bash</code> could point to the Bourne Again Shell executable while in another container the file might not exist. This determination is made at the kernel level and completely transparent to the processes running inside the container.</p>
-<p>While a technical understanding of the technologies mentioned above isn&rsquo;t necessary to effectively use Docker, it often helps in understanding the &ldquo;why&rdquo; aspect of many components of Docker. For more details on how containers can be implemented, check out this <a href="https://www.youtube.com/watch?v=8fi7uSYlOdc" target="_blank" rel="noreferrer noopener">video</a> where a simple version of Docker is implemented in Go.</p>
+<p>While a technical understanding of the technologies mentioned above isn&rsquo;t necessary to effectively use Docker, it often helps in understanding the &ldquo;why&rdquo; component. For details on how containers can be implemented, check out this <a href="https://www.youtube.com/watch?v=8fi7uSYlOdc" target="_blank" rel="noreferrer noopener">video</a> where a simple version of Docker is written using Go.</p>
 
 </section>
 </section>
