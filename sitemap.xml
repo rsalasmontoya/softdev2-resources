@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/docker/</loc>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/cloud/docker/</loc>
   </url><url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/jquery/</loc>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/web-basics/jquery/</loc>
   </url><url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/bootstrap/</loc>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/web-basics/bootstrap/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/cloud/azure/</loc>
     <lastmod>2021-03-07T12:00:00+00:00</lastmod>
@@ -25,8 +25,6 @@
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/services/</loc>
   </url><url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/git/</loc>
-  </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/git/beginner/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-software-protection/intellectual-property/</loc>
@@ -35,7 +33,7 @@
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/react/beginner/</loc>
   </url><url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/react/</loc>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/web-basics/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-project-design/client-checkpoint-phase/</loc>
     <lastmod>2020-12-20T15:26:15+00:00</lastmod>
@@ -52,6 +50,8 @@
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-agiledevelopment/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-agiledevelopment/chapter-principles/</loc>
+  </url><url>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/git/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/git/intermediate/</loc>
   </url><url>
@@ -75,6 +75,8 @@
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-version-control/github-social-computing/</loc>
+  </url><url>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/react/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-requirements/</loc>
   </url><url>
