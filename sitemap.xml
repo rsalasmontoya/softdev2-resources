@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/cloud/docker/</loc>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/devops/docker/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/web-basics/jquery/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/web-basics/bootstrap/</loc>
   </url><url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/cloud/azure/</loc>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/devops/azure/</loc>
     <lastmod>2021-03-07T12:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/</loc>
@@ -91,7 +91,7 @@
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-version-control/</loc>
   </url><url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/cloud/</loc>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/devops/</loc>
     <lastmod>2021-03-07T12:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/instructor/assignments/</loc>
