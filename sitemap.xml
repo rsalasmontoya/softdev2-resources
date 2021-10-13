@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/components/</loc>
+  </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/devops/docker/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/web-basics/jquery/</loc>
