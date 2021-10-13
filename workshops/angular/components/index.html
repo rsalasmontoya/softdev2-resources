@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>Angular Components Workshop</title>
+<title>Angular Components</title>
 <meta name="description" content="This workshop will cover the basics of Components in Angular">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -60,29 +60,31 @@ if (!doNotTrack) {
 <span class='fragment '
   >
   <h4 id="a-component-is-made-of">A component is made of</h4>
-<p>-HTML template that declares what is viewed on the page
--Typescript files that give it behavior just like methods do to a class in java
--CSS selector that defines how it is used in the view page</p>
+<ul>
+<li>HTML template that declares what is viewed on the page</li>
+<li>Typescript files that give it behavior just like methods do to a class in java</li>
+<li>CSS selector that defines how it is used in the view page</li>
+</ul>
 
 </span>
 </section><section>
-<h2 id="lets-create-an-angular-project-to-demo-components">Let&rsquo;s create an Angular Project to demo Components</h2>
-<p>In order to create Angular project we must first have Node installed in our system. You can download Node from [here] (<a href="https://nodejs.org/en/%29" target="_blank" rel="noreferrer noopener">https://nodejs.org/en/)</a>.</p>
+<h2 id="lets-create-an-angular-project">Let&rsquo;s create an Angular Project</h2>
+<p>In order to create Angular project we must first have Node installed in our system. You can download Node from <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer noopener">here</a>.</p>
 <p>Once Node is installed the next step is to open the terminal and run the next commands to install and create our Angular application.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ npm install -g @angular/cli
-</code></pre></div><p>The previous command installed Angular the next command is to create a Project and give it a name. I will use ComponentsDemo for demostration you can use what ever you like.</p>
+</code></pre></div><p>The previous command installed Angular the next command is to create a Project and give it a name.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ ng new ComponentsDemo
 </code></pre></div><p>The next command is to run and open our application</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ cd ComponentsDemo
 ng serve --open
 </code></pre></div></section><section>
 <h2 id="accessing-our-project">Accessing our Project</h2>
-<p>In order to edit and modify our Angular Components application we are going to use Visual Studio Code. Download and install <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer noopener">Visual Studio Code</a>.</p>
+<p>In order to edit and modify our Angular components application we are going to use Visual Studio Code. Download and install <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer noopener">Visual Studio Code</a>.</p>
 <p>We can open our project in Visual code using the following command in the Terminal.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ code .
 </code></pre></div></section><section>
 <h2 id="creating-our-components">Creating our Components</h2>
-<p>There are two way to create Components in Angular manually and using the Angular CLI</p>
+<p>There are two ways to create components in Angular manually and using the Angular CLI</p>
 
 
 <span class='fragment '
