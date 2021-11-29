@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>Angular Components</title>
-<meta name="description" content="This workshop will cover the basics of Components in Angular">
+<title>Angular Routing</title>
+<meta name="description" content="This workshop will cover the basics of Routing in Angular">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -49,89 +49,64 @@ if (!doNotTrack) {
       <div class="slides">
   
 
-    <section><h2 id="angular-components-workshop">Angular Components Workshop</h2>
+    <section><h2 id="angular-routing-workshop">Angular Routing Workshop</h2>
 <p>Roberto Salas</p>
 <img src="/softdev2-resources/images/angular/angular-icon-logo.png" width="100" height="100" />
 </section><section>
-<h2 id="what-are-angular-components">What are Angular Components?</h2>
-<p>Angular Components can be describe as a the most basic building blocks of an Angular application. In simple technical terms a component is just controller for the user interface.</p>
+<h2 id="overview">Overview</h2>
+<p>Introduction, What is routing in Angular?</p>
+<p>Creating a Project that includes the routing module or adding routing module.</p>
+<p>Configure Route Module Check</p>
 
 
 <span class='fragment '
   >
-  <h4 id="a-component-is-made-of">A component is made of</h4>
+  <h4 id="three-step-fundamental-blocks">Three step fundamental blocks</h4>
 <ul>
-<li>HTML template that declares what is viewed on the page</li>
-<li>Typescript files that give it behavior just like methods do to a class in java</li>
-<li>CSS selector that defines how it is used in the view page</li>
+<li>Route paths</li>
+<li>Router outlet</li>
+<li>Routerlink and link active</li>
 </ul>
 
 </span>
 </section><section>
-<h2 id="lets-create-an-angular-project">Let&rsquo;s create an Angular Project</h2>
+<h2 id="what-is-angular-routing">What is Angular routing?</h2>
+<p>Routing in Angular is basically navigating between pages. The Router Module consists of directives and service to implement navigation. In more simple words you could describe it as the function behind the application that lets users move between different screen views.</p>
+</section><section>
+<h2 id="create-an-angular-project">Create an Angular Project</h2>
 <p>In order to create Angular project we must first have Node installed in our system. You can download Node from <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer noopener">here</a>.</p>
 <p>Once Node is installed the next step is to open the terminal and run the next commands to install and create our Angular application.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ npm install -g @angular/cli
 </code></pre></div><p>The previous command installed Angular the next command is to create a Project and give it a name.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ ng new ComponentsDemo
-</code></pre></div><p>The next command is to run and open our application</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ cd ComponentsDemo
-ng serve --open
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ ng new RoutingDemo
 </code></pre></div></section><section>
-<h2 id="accessing-our-project">Accessing our Project</h2>
-<p>In order to edit and modify our Angular components application we are going to use Visual Studio Code. Download and install <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer noopener">Visual Studio Code</a>.</p>
+<h2 id="accessing-and-opening-our-project">Accessing and opening our Project</h2>
+<p>The next command is to run and open our application</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ cd RoutingDemo
+ng serve --open
+</code></pre></div><p>In order to edit and modify our Angular Routing application we are going to use Visual Studio Code. Download and install <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer noopener">Visual Studio Code</a>.</p>
 <p>We can open our project in Visual code using the following command in the Terminal.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ code .
 </code></pre></div></section><section>
-<h2 id="creating-our-components">Creating our Components</h2>
-<p>There are two ways to create components in Angular manually and using the Angular CLI</p>
-
-
-<span class='fragment '
-  >
-  <p>The best way according to the Angular docs forms it to create components using the Angular CLI, Which is what we are going to do next.</p>
-<p>From the terminal we need to go to our Angular application first once on it we will run the following command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ ng generate component &lt;component name&gt;
-</code></pre></div><p>FIY <component name> shoud be replace by the name of your component.</p>
-
-</span>
+<h2 id="pre-configuring-routes-10">PRE-CONFIGURING ROUTES 1.0</h2>
+<p>Assuming you have component views already created we will type the following code to configure our Routes in the <em>AppRoutingModule</em> file.</p>
+<p>First import the components that will be routed. Use the following script to import each component at a time.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>import <span style="color:#f92672">{</span>exampleComponent<span style="color:#f92672">}</span> from ‘./example/example/component’;
+</code></pre></div></section><section>
+<h2 id="pre-configuring-routes-11">PRE-CONFIGURING ROUTES 1.1</h2>
+<p>Now its time to import our <em>AppRoutingModule</em> into our <em>AppModule</em> *Note (skip this step if you created the app with routing this step should be already done)
+Make sure you’re <em>AppModule</em> has the commented importation shown in the image if not add both statements.</p>
+<img src="/softdev2-resources/images/angular/ImportsAppModule.png" width="450" height="300" />
 </section><section>
+<h2 id="pre-configuring-routes-12">PRE-CONFIGURING ROUTES 1.2</h2>
+<p>The last thing step before we start creating our route paths is making sure that our AppRoutingModule file has imported Router Module and Routes correctly.</p>
+<p>The Angular CLI should have also set up the import and exports for @NgModule.
+Please verify if not done so add the missing code.</p>
+<img src="/softdev2-resources/images/angular/ImportRouterModule.png" width="450" height="300" />
+</section><section>
+<h2 id="routes-paths">Routes paths</h2>
+<p>In our <em>AppRoutingModule</em> there is a Routes array (const routes: Routes). Inside this array there is an object that contains two properties path and component. Path is just the URL path for the route and Component is used to tell Angular which component to use for the mentioned path.</p>
 <h2 id="first-container">First Container</h2>
-<p>First we&rsquo;ll create and run an Ubuntu container:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker run -it --rm ubuntu bash
-</code></pre></div><p>where</p>
-<ul>
-<li><code>-it</code> is short for <code>--interactive --tty</code> which starts the container in interactive mode and lets you enter text via the terminal</li>
-<li><code>--rm</code> deletes the container after it exits (but not the image)</li>
-<li><code>ubuntu</code> is the name of the image</li>
-<li><code>bash</code> is the command executed when the container starts<br>
-(technically bash is already the default entrypoint for the Ubuntu image and is only used here to showcase the [COMMAND] argument)</li>
-</ul>
-</section><section>
-<h2 id="first-container-1">First Container</h2>
-<p>If this is your first time using the Ubuntu image Docker will first download it from Docker Hub. If everything has gone according to plan, you should see a new prompt similar to</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>root@a5d9a7a5232c:/#
-</code></pre></div><p>where</p>
-<ul>
-<li><code>root</code> is the current user</li>
-<li><code>a5d9a7a5232c</code> is the hostname (randomly generated by Docker)</li>
-<li><code>/</code> is your current working directory (root directory in this case)</li>
-<li><code>#</code> is another indication that you&rsquo;re logged in as root (non root users have a <code>$</code>)</li>
-</ul>
-<p><strong>Note:</strong> In documentation, it is common to use a single dollar sign <code>$</code> prompt (instead of something like <code>root@a5d9a7a5232c:/#</code>) for simplicity, especially when the information conveyed in a longer prompt isn&rsquo;t relevant to the concepts at hand.</p>
-</section><section>
-<h2 id="first-container-2">First Container</h2>
-<p>You can try running commands like <code>ls</code> to list files and folders:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ ls
-bin  boot  dev  etc  home  lib  ...  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
-</code></pre></div><p>or <code>ps aux</code> to list running processes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ ps aux
-USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root         <span style="color:#ae81ff">1</span>  1.0  0.1   <span style="color:#ae81ff">4112</span>  <span style="color:#ae81ff">3492</span> pts/0    Ss   17:13   0:00 /bin/bash
-root        <span style="color:#ae81ff">10</span>  0.0  0.1   <span style="color:#ae81ff">5900</span>  <span style="color:#ae81ff">3024</span> pts/0    R+   17:13   0:00 ps aux
-</code></pre></div><p><strong>Note:</strong> If this were a virtual machine, you would see tens, possibly hundreds of running processes instead of a small list of isolated ones.</p>
-</section><section>
-<h2 id="first-container-3">First Container</h2>
 <p>You can also try factoring very large numbers:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ factor 12345678901010101010101010987654321
 12345678901010101010101010987654321: 19 853 32069 398053 465067 128312953569637
@@ -143,7 +118,7 @@ Dr. Gunay is awesome
 Dr. Gunay is awesome
 ...
 </code></pre></div></section><section>
-<h2 id="first-container-4">First Container</h2>
+<h2 id="first-container-1">First Container</h2>
 <p>To quit, run the command <code>exit</code>. Since <code>bash</code> (PID 1) was the initial process used to start the container, once it exits, the container stops.</p>
 <p>Because we used the <code>--rm</code> option, Docker should delete the container once it exits which you can verify by typing</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ docker container ls -a
