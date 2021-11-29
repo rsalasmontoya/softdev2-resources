@@ -90,8 +90,7 @@ if (!doNotTrack) {
 <li>Test in command prompt or terminal with:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>node --version
 npm --version
-</code></pre></div><p>which should give you the installed versions.</p>
-</li>
+</code></pre></div>which should give you the installed versions.</li>
 </ul>
 </section><section>
 <h3 id="create-a-project-folder">Create a project folder</h3>
@@ -108,18 +107,15 @@ pwd
 <ul>
 <li>Create a <code>package.json</code> file with the following command:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>npm init -y
-</code></pre></div><p>(if you want control over what goes in it, omit the <code>-y</code>)</p>
-</li>
+</code></pre></div>(if you want control over what goes in it, omit the <code>-y</code>)</li>
 <li>Start installing Node packages for our project:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>npm install --save express
-</code></pre></div><p>which will download packages under the <code>node_modules</code> folder <br>
-(the <code>--save</code> option will make an entry inside the <code>package.json</code> file)</p>
-</li>
+</code></pre></div>which will download packages under the <code>node_modules</code> folder <br>
+(the <code>--save</code> option will make an entry inside the <code>package.json</code> file)</li>
 <li>Install a global program to run your project:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>npm install -g nodemon
-</code></pre></div><p>which will install the <code>nodemon</code> utility system-wide <br>
-(if you are on Mac or Linux, you would need to run this with <code>sudo</code> powers)</p>
-</li>
+</code></pre></div>which will install the <code>nodemon</code> utility system-wide <br>
+(if you are on Mac or Linux, you would need to run this with <code>sudo</code> powers)</li>
 </ul>
 </section><section>
 <h3 id="your-hello-world-program">Your Hello World program</h3>
@@ -133,12 +129,10 @@ pwd
 });
 
 <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3000</span>);
-</code></pre></div><p>It will create a <em>route</em> to the root (<code>'/'</code>) of your website and print.</p>
-</li>
+</code></pre></div>It will create a <em>route</em> to the root (<code>'/'</code>) of your website and print.</li>
 <li>Run it with the command:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>nodemod index.js
-</code></pre></div><p>which should display some information and wait until canceled.</p>
-</li>
+</code></pre></div>which should display some information and wait until canceled.</li>
 </ul>
 </section><section>
 <h3 id="viewing-your-express-program">Viewing your Express program</h3>
@@ -211,8 +205,7 @@ node install --save multer
 <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>){
  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>(<span style="color:#a6e22e">movies</span>);
 });
-</code></pre></div><p>which returns a JSON in response to the root URL <code>/</code>, which now points under <code>/movies</code> where the Router is attached in <code>api.js</code>.</p>
-</li>
+</code></pre></div>which returns a JSON in response to the root URL <code>/</code>, which now points under <code>/movies</code> where the Router is attached in <code>api.js</code>.</li>
 </ul>
 </section><section>
 <h4 id="running-it">Running it</h4>
