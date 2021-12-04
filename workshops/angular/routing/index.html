@@ -176,13 +176,25 @@ export class AppRoutingModule <span style="color:#f92672">{</span> <span style="
 </code></pre></div><p>After <em>component:</em> we would type the name of the component we want the user to go to instead of the wrong URL address that they tried to access.</p>
 </section><section>
 <h2 id="displaying-a-404-page">Displaying a 404 page</h2>
+
+
+<section data-shortcode-section>
 <p>Display a page 404 can be useful to let the user know that what they are looking for was not found or miss typed. First thing we need to do to create a page 404 is create a new Angular component. After this we will proceed to add the path and route like the previous components. This is done in <em>AppRoutingModule.ts</em>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>const routes: Routes <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
   <span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;professorList-component&#39;</span>, component: ProfessorListComponent <span style="color:#f92672">}</span>,
   <span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;studentList-component&#39;</span>, component: StudentListComponent <span style="color:#f92672">}</span>,
   <span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;**&#39;</span>, component: PageNotFoundComponent <span style="color:#f92672">}</span>,  // Wildcard route <span style="color:#66d9ef">for</span> a <span style="color:#ae81ff">404</span> page
 <span style="color:#f92672">]</span>;
-</code></pre></div></section>
+</code></pre></div></section><section>
+<h2 id="404-page">404 Page</h2>
+<p>Lets creat a Component to display our 404 message using the Angular CLI.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ ng generate component pageNotFound
+</code></pre></div><p>Now with our component created add a nice html body message for the user. Add this to <em>PageNotFoundComponent.html</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>&lt;p&gt;ERROR <span style="color:#ae81ff">404</span> PAGE NOT FOUND!!!&lt;/p&gt;
+</code></pre></div><p>g</p>
+
+</section>
+</section>
 
   
 
