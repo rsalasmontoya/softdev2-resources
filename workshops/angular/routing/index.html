@@ -64,8 +64,8 @@ if (!doNotTrack) {
   <h4 id="three-step-fundamental-blocks">Three step fundamental blocks</h4>
 <ul>
 <li>Route paths</li>
-<li>Router outlet</li>
 <li>Routerlink and link active</li>
+<li>Router outlet</li>
 </ul>
 
 </span>
@@ -83,41 +83,105 @@ if (!doNotTrack) {
 <h2 id="accessing-and-opening-our-project">Accessing and opening our Project</h2>
 <p>The next command is to run and open our application</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ cd RoutingDemo
-ng serve --open
+$ ng serve --open
 </code></pre></div><p>In order to edit and modify our Angular Routing application we are going to use Visual Studio Code. Download and install <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer noopener">Visual Studio Code</a>.</p>
 <p>We can open our project in Visual code using the following command in the Terminal.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ code .
 </code></pre></div></section><section>
+<h2 id="creating-components-for-route-demo">Creating Components for Route Demo</h2>
+<p>For the purpose of demonstrating the route configuration we will create two components professorList and studentList. We will use the following two commands to create each component at a time in the Angular CLI.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ ng generate component professorList
+</code></pre></div><p>And</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ ng generate component studentList
+</code></pre></div></section><section>
+
+
+<section data-shortcode-section>
 <h2 id="pre-configuring-routes-10">PRE-CONFIGURING ROUTES 1.0</h2>
-<p>Assuming you have component views already created we will type the following code to configure our Routes in the <em>AppRoutingModule</em> file.</p>
+<p>Assuming you have component views already created we will type the following code to configure our Routes in the <em>AppRoutingModule.ts</em> file.</p>
 <p>First import the components that will be routed. Use the following script to import each component at a time.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>import <span style="color:#f92672">{</span>exampleComponent<span style="color:#f92672">}</span> from ‘./example/example/component’;
 </code></pre></div></section><section>
 <h2 id="pre-configuring-routes-11">PRE-CONFIGURING ROUTES 1.1</h2>
-<p>Now its time to import our <em>AppRoutingModule</em> into our <em>AppModule</em> *Note (skip this step if you created the app with routing this step should be already done)
-Make sure you’re <em>AppModule</em> has the commented importation shown in the image if not add both statements.</p>
-<img src="/softdev2-resources/images/angular/ImportsAppModule.PNG" width="450" height="300" />
-</section><section>
+<p>Now its time to import our <em>AppRoutingModule.ts</em> into our <em>AppModule.ts</em> *Note (skip this step if you created the app with routing this step should be already done)
+Make sure you’re <em>AppModule.ts</em> has the commented importation shown in the image if not add both statements.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>import <span style="color:#f92672">{</span> NgModule <span style="color:#f92672">}</span> from <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
+import <span style="color:#f92672">{</span> BrowserModule <span style="color:#f92672">}</span> from <span style="color:#e6db74">&#39;@angular/platform-browser&#39;</span>;
+
+import <span style="color:#f92672">{</span> AppRoutingModule <span style="color:#f92672">}</span> from <span style="color:#e6db74">&#39;./app-routing.module&#39;</span>;
+import <span style="color:#f92672">{</span> AppComponent <span style="color:#f92672">}</span> from <span style="color:#e6db74">&#39;./app.component&#39;</span>;
+import <span style="color:#f92672">{</span> StudentListComponent <span style="color:#f92672">}</span> from <span style="color:#e6db74">&#39;./student-list/student-list.component&#39;</span>;
+import <span style="color:#f92672">{</span> ProfessorListComponent <span style="color:#f92672">}</span> from <span style="color:#e6db74">&#39;./professor-list/professor-list.component&#39;</span>;
+
+@NgModule<span style="color:#f92672">({</span>
+  declarations: <span style="color:#f92672">[</span>
+    AppComponent,
+    StudentListComponent,
+    ProfessorListComponent
+  <span style="color:#f92672">]</span>,
+  imports: <span style="color:#f92672">[</span>
+    BrowserModule,
+    AppRoutingModule
+  <span style="color:#f92672">]</span>,
+  providers: <span style="color:#f92672">[]</span>,
+  bootstrap: <span style="color:#f92672">[</span>AppComponent<span style="color:#f92672">]</span>
+<span style="color:#f92672">})</span>
+export class AppModule <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
+</code></pre></div></section><section>
 <h2 id="pre-configuring-routes-12">PRE-CONFIGURING ROUTES 1.2</h2>
-<p>The last thing step before we start creating our route paths is making sure that our AppRoutingModule file has imported Router Module and Routes correctly.</p>
-<p>The Angular CLI should have also set up the import and exports for @NgModule.
-Please verify if not done so add the missing code.</p>
-<img src="/softdev2-resources/images/angular/ImportRouterModule.PNG" width="450" height="300" />
-</section><section>
+<p>The last thing step before we start creating our route paths is making sure that our <em>AppRoutingModule.ts</em> file has imported Router Module and Routes correctly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>The Angular CLI should have also set up the import and exports <span style="color:#66d9ef">for</span> @NgModule.
+Please verify <span style="color:#66d9ef">if</span> not <span style="color:#66d9ef">done</span> so add the missing code.
+
+import <span style="color:#f92672">{</span> NgModule <span style="color:#f92672">}</span> from <span style="color:#e6db74">&#39;@angular/core&#39;</span>;
+import <span style="color:#f92672">{</span> RouterModule, Routes <span style="color:#f92672">}</span> from <span style="color:#e6db74">&#39;@angular/router&#39;</span>;
+
+const routes: Routes <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>;
+
+@NgModule<span style="color:#f92672">({</span>
+  imports: <span style="color:#f92672">[</span>RouterModule.forRoot<span style="color:#f92672">(</span>routes<span style="color:#f92672">)]</span>,
+  exports: <span style="color:#f92672">[</span>RouterModule<span style="color:#f92672">]</span>
+<span style="color:#f92672">})</span>
+export class AppRoutingModule <span style="color:#f92672">{</span> <span style="color:#f92672">}</span>
+</code></pre></div></section><section>
+
+</section>
 <h2 id="routes-paths">Routes paths</h2>
-<p>In our <em>AppRoutingModule</em> there is a Routes array (const routes: Routes). Inside this array there is an object that contains two properties path and component. Path is just the URL path for the route and Component is used to tell Angular which component to use for the mentioned path.</p>
+<p>In our <em>AppRoutingModule.ts</em> there is a Routes array (const routes: Routes). Inside this array there is an object that contains two properties path and component. Path is just the URL path for the route and Component is used to tell Angular which component to use for the mentioned path.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>const routes: Routes <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+  <span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;professorList-component&#39;</span>, component: ProfessorListComponent <span style="color:#f92672">}</span>,
+  <span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;studentList-component&#39;</span>, component: StudentListComponent <span style="color:#f92672">}</span>,
+<span style="color:#f92672">]</span>;
+</code></pre></div></section><section>
+<h2 id="add-routerlink-and-linkactive">Add routerlink and linkactive</h2>
+<p>In the previews step we defined the routes of each component now its time to add the links to both components. In our AppComponent.html we will list our likes in the following html form.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>&lt;h1&gt;Angular Router App&lt;/h1&gt;
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a routerLink<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/professorList-component&#34;</span> routerLinkActive<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span>&gt;First Component &lt;/a&gt;&lt;/li&gt;
+    &lt;br&gt;
+    &lt;li&gt;&lt;a routerLink<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/studentList-component&#34;</span> routerLinkActive<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span>&gt;Second Component&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre></div></section><section>
+<h2 id="add-route-outlet">Add route outlet</h2>
+<p>The next step to display our component view is to add the router outlet in <em>AppComponent.html</em>. This is key concept in Angular since our html from the components we have define previous will take the place of these tags once the selected route component is clicked.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>&lt;router-outlet&gt;&lt;/router-outlet&gt;
+</code></pre></div></section><section>
+<h2 id="wildcard-routes">Wildcard Routes</h2>
+<p>Sometimes users navigate to URLs that do not exist this is when wildcards come in handy. Wildcards are used to redirect users to the correct view. To set this up we will use the following line of code in <em>AppRoutingModule.ts</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape><span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;professorList-component&#39;</span>, component: ProfessorListComponent <span style="color:#f92672">}</span>,
+<span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;studentList-component&#39;</span>, component: StudentListComponent <span style="color:#f92672">}</span>,
+<span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;**&#39;</span>, component:  <span style="color:#f92672">}</span>, // Wildcard route
+</code></pre></div><p>After <em>component:</em> we would type the name of the component we want the user to go to instead of the wrong URL address that they tried to access.</p>
 </section><section>
-<h2 id="first-container">First Container</h2>
-<p>You can also try factoring very large numbers:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ factor 12345678901010101010101010987654321
-12345678901010101010101010987654321: 19 853 32069 398053 465067 128312953569637
-</code></pre></div><p>or:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>$ yes Dr. Gunay is awesome
-Dr. Gunay is awesome
-Dr. Gunay is awesome
-Dr. Gunay is awesome
-Dr. Gunay is awesome
-...
+<h2 id="displaying-a-404-page">Displaying a 404 page</h2>
+<p>Display a page 404 can be useful to let the user know that what they are looking for was not found or miss typed. First thing we need to do to create a page 404 is create a new Angular component. After this we will proceed to add the path and route like the previous components. This is done in <em>AppRoutingModule.ts</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>const routes: Routes <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+  <span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;professorList-component&#39;</span>, component: ProfessorListComponent <span style="color:#f92672">}</span>,
+  <span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;studentList-component&#39;</span>, component: StudentListComponent <span style="color:#f92672">}</span>,
+  <span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;**&#39;</span>, component: PageNotFoundComponent <span style="color:#f92672">}</span>,  // Wildcard route <span style="color:#66d9ef">for</span> a <span style="color:#ae81ff">404</span> page
+<span style="color:#f92672">]</span>;
 </code></pre></div></section>
 
   
