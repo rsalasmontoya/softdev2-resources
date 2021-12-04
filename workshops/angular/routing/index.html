@@ -175,10 +175,10 @@ export class AppRoutingModule <span style="color:#f92672">{</span> <span style="
 <span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;**&#39;</span>, component:  <span style="color:#f92672">}</span>, // Wildcard route
 </code></pre></div><p>After <em>component:</em> we would type the name of the component we want the user to go to instead of the wrong URL address that they tried to access.</p>
 </section><section>
-<h2 id="displaying-a-404-page">Displaying a 404 page</h2>
 
 
 <section data-shortcode-section>
+<h2 id="displaying-a-404-page">Displaying a 404 page</h2>
 <p>Display a page 404 can be useful to let the user know that what they are looking for was not found or miss typed. First thing we need to do to create a page 404 is create a new Angular component. After this we will proceed to add the path and route like the previous components. This is done in <em>AppRoutingModule.ts</em>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>const routes: Routes <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
   <span style="color:#f92672">{</span> path: <span style="color:#e6db74">&#39;professorList-component&#39;</span>, component: ProfessorListComponent <span style="color:#f92672">}</span>,
