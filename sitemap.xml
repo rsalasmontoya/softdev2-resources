@@ -28,6 +28,8 @@
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/services/</loc>
   </url><url>
+    <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-security/section-common-attacks/</loc>
+  </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/git/beginner/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-software-protection/intellectual-property/</loc>
@@ -57,6 +59,8 @@
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/components/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/routing/</loc>
+  </url><url>
+    <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-security/section-best-practices/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/git/</loc>
   </url><url>
@@ -99,6 +103,8 @@
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-agiledevelopment/chapter-kanban/</loc>
   </url><url>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/security/</loc>
+  </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-version-control/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/devops/</loc>
@@ -113,9 +119,9 @@
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/python/beginner/</loc>
   </url><url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/selenium/</loc>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/testing/beginner/</loc>
   </url><url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/selenium/beginner/</loc>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/testing/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/python/</loc>
   </url><url>
@@ -123,6 +129,8 @@
     <lastmod>2020-12-20T15:26:15+00:00</lastmod>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-software-protection/</loc>
+  </url><url>
+    <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-security/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/instructor/assignments/assgn1a/</loc>
     <lastmod>2020-12-20T15:26:15+00:00</lastmod>
