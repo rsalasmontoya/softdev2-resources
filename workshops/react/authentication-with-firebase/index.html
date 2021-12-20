@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-<title>React and Firebase Workshop</title>
+<title>React Authentication with Firebase Workshop</title>
 <meta name="description" content="This workshop will authentication with React and Firebase">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,9 +49,18 @@ if (!doNotTrack) {
       <div class="slides">
   
 
-    <section><h2 id="welcome-to-the-react-and-firebase-workshop">Welcome to the React and Firebase Workshop</h2>
-<p>Author: Keyvan Shabani</p>
-<img src="/softdev2-resources/images/react/authentication with Firebase/react.png" alt="React Firebase Logo" width="400"/>
+    <section><h3>React Authentication with Firebase Workshop</h3>
+
+<h4>ITEC 3870 Software Development II, <br>Keyvan Shabani</h4>
+<p>(License: <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>)</p>
+<figure >
+    
+ <img src="/softdev2-resources/images/react/authentication%20with%20Firebase/react.png" height="300px"  />
+    
+    
+</figure>
+<p><a class="nav nav-prev" href="https://ggc-sd.github.io/softdev2-resources/workshops/react/beginner/" title="React for Beginners"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - React for Beginners</a>, <span></span><a class="nav nav-next" href="https://ggc-sd.github.io/softdev2-resources/workshops/backend/" title="Back-end Workshops">Next - Back-end Workshops <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+
 </section><section>
 <h2 id="what-is-react">What is React?</h2>
 <p>React.js is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. It’s used for handling the view layer for web and mobile apps. React also allows us to create reusable UI components. React was first created by Jordan Walke, a software engineer working for Facebook. React first deployed on Facebook’s newsfeed in 2011 and on Instagram in 2012.</p>
@@ -85,33 +94,31 @@ npm start
 </code></pre></div></section><section>
 <h2 id="lets-set-up-a-firebase-project">Let&rsquo;s set up a firebase project</h2>
 <ul>
-<li>go to <strong><a href="https://firebase.google.com" target="_blank" rel="noreferrer noopener">Firebase</a></strong> and create an account.</li>
+<li>Go to <strong><a href="https://firebase.google.com" target="_blank" rel="noreferrer noopener">Firebase</a></strong> and create an account.</li>
 <li>Click on &ldquo;Go to console&rdquo; on the top right corner.</li>
 <li>Click on &ldquo;Add project&rdquo; to create a project, and simply follow the steps on website.</li>
+<li>Then, open your terminal in the project root and install the Firebase command-line interface (CLI):</li>
 </ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>npm install -g firebase-tools
+</code></pre></div><p>Mac and Linux users would need to prepend this command with <code>sudo</code>.</p>
 </section><section>
 <h2 id="login-to-firebase-and-install">Login to firebase and install</h2>
 <ul>
-<li>Open your terminal in the project root and run the following command</li>
-</ul>
+<li>Once the Firebase CLI is installed on your computer, you should be able run:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>firebase login
-</code></pre></div><ul>
-<li>Run this command in terminal to view all of your firebase projects</li>
-</ul>
+</code></pre></div></li>
+<li>Run this command to view all of your firebase projects:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>firebase projects:list
-</code></pre></div><ul>
-<li>
-<p>If you see the project you just created, then you are ready to go</p>
-</li>
-<li>
-<p>Now it is time to install firebase in your project</p>
-</li>
-</ul>
+</code></pre></div></li>
+<li>If you see the project you just created, then you are ready to go</li>
+<li>Now it is time to install firebase in your project
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>npm install firebase
-</code></pre></div></section><section>
+</code></pre></div></li>
+</ul>
+</section><section>
 <h2 id="initialize-firebase-app">Initialize Firebase App</h2>
 <ul>
-<li>under src folder, create a new folder called &ldquo;firebase&rdquo;</li>
+<li>Under src folder, create a new folder called &ldquo;firebase&rdquo;</li>
 <li>Inside the firebase folder, create a file called &ldquo;config.js&rdquo;</li>
 <li>Now go to your project in firebase website. go to the &ldquo;Project settings&rdquo;, and copy the project configuration.</li>
 </ul>
@@ -426,7 +433,7 @@ export default Profile;
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>http://localhost:3000/profile/
 </code></pre></div></section><section>
-<h2 id="impelementing-logout">impelementing logout</h2>
+<h2 id="implementing-logout">Implementing logout</h2>
 <ul>
 <li>Now we have to create a logout function so the logged in user is able to logout.</li>
 <li>Under the src folder, create a file and call it &ldquo;Header.js&rdquo; and paste the following code in it</li>
@@ -467,7 +474,7 @@ export default Header;
   <span style="color:#66d9ef">return</span> firebase.auth<span style="color:#f92672">()</span>.signOut<span style="color:#f92672">()</span>;
 <span style="color:#f92672">}</span>;
 </code></pre></div></section><section>
-<h2 id="impelementing-login">impelementing login</h2>
+<h2 id="implementing-login">Implementing login</h2>
 <ul>
 <li>Inside pages folder, create a new file and call it &ldquo;Login.js&rdquo;</li>
 <li>Paste this code in Login.js</li>
@@ -566,7 +573,7 @@ export default Login;
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>import Login from <span style="color:#e6db74">&#39;./pages/Login&#39;</span>;
 </code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>&lt;Route exact path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/login&#34;</span> component<span style="color:#f92672">={</span>Login<span style="color:#f92672">}</span> /&gt;
 </code></pre></div></section><section>
-<h2 id="impelementing-forgot-password">impelementing forgot password</h2>
+<h2 id="implementing-forgot-password">Implementing forgot password</h2>
 <ul>
 <li>Inside the pages folder, create a new file called &ldquo;ForgotPassword.js&rdquo; and paste the following</li>
 </ul>
