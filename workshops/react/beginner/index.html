@@ -143,6 +143,75 @@ If it works, congrats you&rsquo;ve created your very first react app.</li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>code .
 </code></pre></div></li>
 </ul>
+</section><section>
+<h3 id="routing">Routing</h3>
+<div style="width: 30%; display: inline-block;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>&lt;<span style="color:#f92672">Switch</span>&gt;
+    &lt;<span style="color:#f92672">Route</span> <span style="color:#a6e22e">exact</span> <span style="color:#a6e22e">path</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span>&gt;
+        &lt;<span style="color:#f92672">Home</span> /&gt;
+    &lt;/<span style="color:#f92672">Route</span>&gt;
+    &lt;<span style="color:#f92672">Route</span> <span style="color:#a6e22e">path</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/about&#34;</span>&gt;
+        &lt;<span style="color:#f92672">About</span> /&gt;
+    &lt;/<span style="color:#f92672">Route</span>&gt;
+    &lt;<span style="color:#f92672">Route</span> <span style="color:#a6e22e">path</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/dashboard&#34;</span>&gt;
+        &lt;<span style="color:#f92672">Dashboard</span> /&gt;
+    &lt;/<span style="color:#f92672">Route</span>&gt;
+&lt;/<span style="color:#f92672">Switch</span>&gt;
+</code></pre></div></div><div style="width: 55%; display: inline-block;">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>&lt;<span style="color:#f92672">Router</span>&gt;
+    &lt;<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">ul</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;
+                &lt;<span style="color:#f92672">Link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/&#34;</span>&gt;Home&lt;/<span style="color:#f92672">Link</span>&gt;
+            &lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;
+                &lt;<span style="color:#f92672">Link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/about&#34;</span>&gt;About&lt;/<span style="color:#f92672">Link</span>&gt;
+            &lt;/<span style="color:#f92672">li</span>&gt;
+            &lt;<span style="color:#f92672">li</span>&gt;
+                &lt;<span style="color:#f92672">Link</span> <span style="color:#a6e22e">to</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/dashboard&#34;</span>&gt;Dashboard&lt;/<span style="color:#f92672">Link</span>&gt;
+            &lt;/<span style="color:#f92672">li</span>&gt;
+        &lt;/<span style="color:#f92672">ul</span>&gt;
+&lt;/<span style="color:#f92672">Router</span>&gt;
+</code></pre></div></div>
+</section><section>
+<h3 id="state-vs-props">State vs Props</h3>
+<ul>
+<li>
+<p><strong>State</strong>: is the data that changes over the lifetime of a specific instance in a react component.</p>
+</li>
+<li>
+<p><strong>Props</strong> (short for properties): is an object of arbitrary inputs a React function accepts as the first argument.</p>
+</li>
+</ul>
+</section><section>
+
+
+<section data-shortcode-section>
+<h3 id="diving-into-props">Diving Into Props</h3>
+<ul>
+<li>
+<p>Think of props as arguments to a function. React components are functions which return JSX (or more generally something that&rsquo;s renderable like React elements, null, a string, etc.).</p>
+</li>
+<li>
+<p>Typically when you have a piece of code that you would like to reuse, you can place that code into a function and any dynamic values that code used before can be accepted as arguments (for example const five = 2 + 3 could be extracted to a function and accept arguments like so const five = add(2, 3)).</p>
+</li>
+</ul>
+</section><section>
+<h3 id="diving-into-props-1">Diving Into Props</h3>
+<p>When we define:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">return</span> (
+        &lt;<span style="color:#f92672">div</span>&gt;
+            {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">n1</span>} <span style="color:#f92672">+</span> {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">n2</span>} <span style="color:#f92672">=</span> {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">n1</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">n2</span>}
+        &lt;/<span style="color:#f92672">div</span>&gt;
+        )
+}
+</code></pre></div><p>Then,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="nohighlight" data-noescape>&lt;<span style="color:#f92672">Add</span> <span style="color:#a6e22e">n1</span><span style="color:#f92672">=</span><span style="color:#e6db74">{2}</span> <span style="color:#a6e22e">n2</span><span style="color:#f92672">=</span><span style="color:#e6db74">{3}</span> /&gt;
+</code></pre></div><p>Becomes:</p>
+<pre tabindex="0"><code>2+3=5
+</code></pre>
+</section>
 </section>
 
   
