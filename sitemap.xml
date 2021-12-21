@@ -26,7 +26,7 @@
     <loc>https://ggc-sd.github.io/softdev2-resources/instructor/schedule/</loc>
     <lastmod>2020-12-20T15:26:15+00:00</lastmod>
   </url><url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/services/</loc>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/beginner/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-security/section-common-attacks/</loc>
   </url><url>
@@ -58,8 +58,6 @@
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/components/</loc>
   </url><url>
-    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/routing/</loc>
-  </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-security/section-best-practices/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/git/</loc>
@@ -85,6 +83,8 @@
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/</loc>
   </url><url>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/routing/</loc>
+  </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-version-control/github-social-computing/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/workshops/react/</loc>
@@ -100,6 +100,8 @@
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/instructor/exams/</loc>
     <lastmod>2020-12-20T15:26:15+00:00</lastmod>
+  </url><url>
+    <loc>https://ggc-sd.github.io/softdev2-resources/workshops/angular/services/</loc>
   </url><url>
     <loc>https://ggc-sd.github.io/softdev2-resources/student/chapter-agiledevelopment/chapter-kanban/</loc>
   </url><url>
